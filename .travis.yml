@@ -1,0 +1,28 @@
+language: python
+git:
+  depth: false
+os: linux
+dist: bionic
+arch: s390x
+addons:
+  apt:
+    packages:
+      - libfontconfig1-dev
+      - libfreetype6-dev
+      - libgl1-mesa-dev
+      - libharfbuzz-dev
+      - libpng-dev
+      - libx11-xcb-dev
+      - libxcursor-dev
+      - libxi-dev
+      - libxinerama-dev
+      - libxkbcommon-x11-dev
+      - libxrandr-dev
+      - pkg-config
+      - python3-pil
+      - wayland-protocols
+      - zlib1g-dev
+before_script:
+  - python3 setup.py build --debug --verbose
+script:
+  - python3 test.py
